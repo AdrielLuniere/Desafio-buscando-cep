@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import BrokerList from './components/BrokerList';
 import CepSearch from './components/CepSearch';
 import Navbar from './components/Navbar';
-import App from ''
+import './App.css'
 
 function App() {
   return (
