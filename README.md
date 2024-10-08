@@ -48,11 +48,11 @@ realizar buscas por CEP, fornecendo informações detalhadas.
 # Screenshots - Mobile
 
 <div style="display: flex; gap: 15px; flex-direction: column">
-<img src="./brazilapi-react/src/img/mobile.png" alt="resposivo Menu">
-<img src="./brazilapi-react/src/img/mobile_porCep.png" alt="Resposivo Home">
-<img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="Resposivo Sobre mim">
-<img src="./brazilapi-react/src/img/mobile_porCNPJ.png" alt="Resposivo Sobre mim 2">
-<img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="Resposivo Habilidade">
+<img src="./brazilapi-react/src/img/mobile.png" alt="mobile">
+<img src="./brazilapi-react/src/img/mobile_porCep.png" alt="mobile_porCep">
+<img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="mobile_porCidade">
+<img src="./brazilapi-react/src/img/mobile_porCNPJ.png" alt="mobile_porCNPJ">
+<img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="mobile_porCidade">
 </div> 
 
 
