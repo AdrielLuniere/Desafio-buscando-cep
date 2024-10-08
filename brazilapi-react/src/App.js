@@ -17,30 +17,21 @@ function App() {
     setShowModal(true)
 }
   useEffect(() => {
-    // Fetching data from BrazilAPI
+    
     fetch('https://brasilapi.com.br/api/cvm/corretoras/v1')
       .then(response => response.json())
       .then(data => {
         setCorretoras(data);
-        setFilteredCorretoras(data); // Inicializa a lista filtrada com todas as corretoras
+        setFilteredCorretoras(data); 
       })
       .catch(error => console.error('Erro ao buscar corretoras:', error));
   }, []);
 
-  // Função para lidar com a busca e filtrar corretoras conforme o usuário digita
+  
   const handleSearch = (e) => {
-    const searchValue = e.target.value.toLowerCase(); // Mantém o valor que o usuário está digitando
-    console.log(corretoras)    
-    setSearchTerm(searchValue); // Atualiza o estado do termo de busca
+    const searchValue = e.target.value.toLowerCase();   
+    setSearchTerm(searchValue); 
     
-    // Filtro das corretoras por nome, cidade ou CNPJ
-    console.log(searchValue)
-    
-          
-  // const filtered = corretoras.filter((c) => {
-      
-  //     return c.nome_social.toLowerCase().includes('santos')
-  // })
     const filtered = corretoras.filter(corretora =>
       
       corretora.nome_social.toLowerCase().includes(searchValue) ||
@@ -48,10 +39,9 @@ function App() {
       corretora.cnpj.includes(searchValue)
     );
 
-    setFilteredCorretoras([...filtered]); // Atualiza a lista de corretoras exibida
+    setFilteredCorretoras([...filtered]); 
   };
 
-  // Função para buscar informações do CEP na BrazilAPI
   const handleCepSearch = (e) => {
     e.preventDefault();
 
@@ -76,15 +66,13 @@ function App() {
   return (
     <div className="container">
       <h1>Catálogo de Corretoras e Busca por CEP</h1>
-      {/* <Desdobramento corretora={corretora}/> */}
       {showModal && <Desdobramento corretora={corretora}
       onClick={() => setShowModal(false)}/>}
-      {/* Busca de corretoras */}
       <input
         type="text"
         placeholder="Buscar por Nome, Cidade ou CNPJ"
         onChange={handleSearch}
-        value={searchTerm}  // Garante que o estado é corretamente vinculado ao campo de input
+        value={searchTerm}
         className="search-box"
       />
       <ul>
@@ -102,7 +90,6 @@ function App() {
         )}
       </ul>
 
-      {/* Busca por CEP */}
       <form onSubmit={handleCepSearch} className="cep-form">
         <input
           type="text"
@@ -131,27 +118,3 @@ function App() {
 }
 
 export default App;
-
-// src/App.js
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import BrokerList from './components/BrokerList';
-// import CepSearch from './components/CepSearch';
-// import Navbar from './components/Navbar';
-// import './App.css'
-
-// function App() {
-//   return (
-//     <Router>
-//       <div>
-//         <Navbar />
-//         <Routes>
-//           <Route path="/" element={<BrokerList />} />
-//           <Route path="/cep" element={<CepSearch />} />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
