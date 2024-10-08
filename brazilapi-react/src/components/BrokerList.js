@@ -6,7 +6,7 @@ function BrokerList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fazendo requisição para a BrazilAPI
+
     fetch('https://brasilapi.com.br/api/banks/v1')
       .then(response => response.json())
       .then(data => {
