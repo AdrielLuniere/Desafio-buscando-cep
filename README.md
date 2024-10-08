@@ -87,7 +87,7 @@ futuras melhorias e expansões.
 
 
 <h3>Ao clicar na imagem do figma, você será redirecionado a pagina onde foi criado o designer do portfolio</h3>
-<p align="left"> <a href="https://www.figma.com/file/kgDwTbxNsDqwV5podb3jEp/Untitled?type=design&node-id=1-2&t=qLCsCyR2cvkcURCn-0" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.figma.com/design/kgDwTbxNsDqwV5podb3jEp/Untitled?node-id=952-2&node-type=canvas&t=IuoyHfUbRple0PWd-0" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> </p>
 
 <h2>:hammer: Créditos</h2>
 <table>
