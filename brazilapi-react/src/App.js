@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import { Desdobramento } from './components/desdobramento';
 
 function App() {
   const [corretoras, setCorretoras] = useState([]);
@@ -8,10 +9,16 @@ function App() {
   const [cep, setCep] = useState('');
   const [cepInfo, setCepInfo] = useState(null);
   const [cepError, setCepError] = useState('');
-
+  const [corretora, setCorretora] = useState({});
+  const [showModal, setShowModal] = useState(false)
+  
+  const getCorretora = (corretora) => {
+    setCorretora(corretora)
+    setShowModal(true)
+}
   useEffect(() => {
     // Fetching data from BrazilAPI
-    fetch('https://brasilapi.com.br/api/corretoras/v1')
+    fetch('https://brasilapi.com.br/api/cvm/corretoras/v1')
       .then(response => response.json())
       .then(data => {
         setCorretoras(data);
@@ -23,16 +30,25 @@ function App() {
   // Função para lidar com a busca e filtrar corretoras conforme o usuário digita
   const handleSearch = (e) => {
     const searchValue = e.target.value.toLowerCase(); // Mantém o valor que o usuário está digitando
+    console.log(corretoras)    
     setSearchTerm(searchValue); // Atualiza o estado do termo de busca
     
     // Filtro das corretoras por nome, cidade ou CNPJ
+    console.log(searchValue)
+    
+          
+  // const filtered = corretoras.filter((c) => {
+      
+  //     return c.nome_social.toLowerCase().includes('santos')
+  // })
     const filtered = corretoras.filter(corretora =>
-      corretora.nome.toLowerCase().includes(searchValue) ||
-      corretora.cidade.toLowerCase().includes(searchValue) ||
+      
+      corretora.nome_social.toLowerCase().includes(searchValue) ||
+      corretora.municipio.toLowerCase().includes(searchValue) ||
       corretora.cnpj.includes(searchValue)
     );
 
-    setFilteredCorretoras(filtered); // Atualiza a lista de corretoras exibida
+    setFilteredCorretoras([...filtered]); // Atualiza a lista de corretoras exibida
   };
 
   // Função para buscar informações do CEP na BrazilAPI
@@ -60,7 +76,9 @@ function App() {
   return (
     <div className="container">
       <h1>Catálogo de Corretoras e Busca por CEP</h1>
-
+      {/* <Desdobramento corretora={corretora}/> */}
+      {showModal && <Desdobramento corretora={corretora}
+      onClick={() => setShowModal(false)}/>}
       {/* Busca de corretoras */}
       <input
         type="text"
@@ -71,10 +89,12 @@ function App() {
       />
       <ul>
         {filteredCorretoras.length > 0 ? (
-          filteredCorretoras.map((corretora) => (
-            <li key={corretora.cnpj}>
-              <div className="name">{corretora.nome}</div>
-              <div className="details">{corretora.cidade} / {corretora.cnpj}</div>
+          filteredCorretoras.map((corretora, index) => (
+            <li key={index}
+              onClick={() => getCorretora(corretora)}>
+              
+              <div className="name">{corretora.nome_social}</div>
+              <div className="details">{corretora.municipio} / {corretora.cnpj}</div>
             </li>
           ))
         ) : (
@@ -111,17 +131,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
 
 // src/App.js
 // import React from 'react';
