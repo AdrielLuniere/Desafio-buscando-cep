@@ -19,7 +19,7 @@ realizar buscas por CEP, fornecendo informações detalhadas.
 
 1. Clone este repositório:
  ```bash
-   git clone https://github.com/seu-repositorio/projeto.git
+   git clone https://github.com/AdrielLuniere/Desafio-buscando-cep.git
    ```
 2. Instale as dependências:
     ```bash
