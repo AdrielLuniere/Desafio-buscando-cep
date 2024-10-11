@@ -52,7 +52,6 @@ realizar buscas por CEP, fornecendo informações detalhadas.
 <img src="./brazilapi-react/src/img/mobile_porCep.png" alt="mobile_porCep">
 <img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="mobile_porCidade">
 <img src="./brazilapi-react/src/img/mobile_porCNPJ.png" alt="mobile_porCNPJ">
-<img src="./brazilapi-react/src/img/mobile_porCidade.png" alt="mobile_porCidade">
 </div> 
 
 
